@@ -7,6 +7,8 @@
 [Traditional page](http://antouank.github.io/Style-perf/traditional/)
 
 
+## for 500 nodes
+
 - Download size
 
 |inline|traditional
@@ -17,7 +19,7 @@
 
 |inline|traditional
 |---|---|
-|20ms |45ms (html + css) 20ms + 5ms + 20ms
+|~20ms |~45ms (html + css) 20ms + 5ms + 20ms
 
 In first case, we make only one request, and by the time we get back the `index.html`, we have everything.
 
@@ -27,11 +29,7 @@ In the second case, we have to get the `index.html` ( although it's smaller, RTT
 
 |inline|traditional
 |---|---|
-|46ms |84ms
-|48ms |82ms
-|53ms |81ms
-|50ms |90ms
-|49ms |81ms
-|50ms |90ms
+|~35ms |~55ms
 
 The time when wee see the screen painted.
+( which basically is 10 ms after the browser gets everything )
