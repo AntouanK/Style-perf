@@ -106,7 +106,7 @@ var getBlock = function () {
 
 var blocks = '';
 var block = getBlock();
-var multiplier = 100;
+var multiplier = 1000;
 var i = 0;
 while(i < multiplier){
   blocks += block;
