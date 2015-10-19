@@ -65,10 +65,10 @@ if(process.env.TYPE === 'css'){
 var getStyleFor = function (selector) {
 
   if(process.env.TYPE === 'traditional'){
-    return `class="${selector.replace(/\./g, '')}"`;
+    return `class="${selector.replace(/\./g, ' ')}"`;
   }
   else if(process.env.TYPE === 'inline'){
-    return `style=${styles[selector].replace(/\n/gm, '')}`;
+    return `style="${styles[selector].replace(/\n/gm, '')}"`;
   }
   else {
     throw new Error('valid TYPE variables are "inline" and "traditional"');
