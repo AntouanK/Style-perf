@@ -7,7 +7,7 @@
 [Traditional page](http://antouank.github.io/Style-perf/traditional/)
 
 
-## for 500 nodes
+## for 100 nodes
 
 - Download size
 
