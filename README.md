@@ -13,7 +13,7 @@
 
 |inline|traditional
 |---|---|
-|7.3kB (html) |3.9kB (html + css)
+|0.9kB `html` (716kB) |0.8kB `html + css`
 
 - Download time
 
@@ -33,3 +33,24 @@ In the second case, we have to get the `index.html` ( although it's smaller, RTT
 
 The time when wee see the screen painted.
 ( which basically is 10 ms after the browser gets everything )
+
+
+## for 1000 nodes
+
+- Download size gzipped ( uncompressed )
+
+|inline|traditional
+|---|---|
+|10kB `html` (716kB) |4.6kB `html + css` (335kB)
+
+- Download time
+
+|inline|traditional
+|---|---|
+|~28ms |~45ms (html + css) 20ms + 10ms + 20ms
+
+- First paint
+
+|inline|traditional
+|---|---|
+|~48ms |~110ms
