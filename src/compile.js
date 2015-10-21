@@ -138,7 +138,7 @@ var html = `
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Traditional CSS</title>
+    <title>${process.env.TYPE} CSS</title>
     ${headerTag}
   </head>
   <body>
