@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo 'clean'
-rm ../traditional/* ../inline/* ../header/*
+rm ../traditional/* ../inline/* ../embedded/*
 
 echo 'compiling traditional';
 export TYPE='css';
