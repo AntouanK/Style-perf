@@ -1,6 +1,6 @@
 
 
-### Comparison of inline styles, and traditional CSS file
+### Comparison of inline styles, traditional CSS file and embedded styles
 
 [Inline page](http://antouank.github.io/Style-perf/inline/)
 
