@@ -49,29 +49,35 @@ var styles = {
   `
 };
 
-//  print just CSS
-if(process.env.TYPE === 'css'){
+var getCss = function () {
+  var css = '';
   Object.keys(styles)
   .forEach(key => {
-    console.log(`
+    css += `
       ${key} {
         ${styles[key]}
       }
-    `);
+    `;
   });
+  return css;
+}
+
+//  print just CSS
+if(process.env.TYPE === 'css'){
+  console.log(getCss());
   return true;
 }
 
 var getStyleFor = function (selector) {
 
-  if(process.env.TYPE === 'traditional'){
+  if(process.env.TYPE === 'traditional' || process.env.TYPE === 'embedded'){
     return `class="${selector.replace(/\./g, ' ')}"`;
   }
   else if(process.env.TYPE === 'inline'){
     return `style="${styles[selector].replace(/\n/gm, '').replace(/\s+/g, ' ')}"`;
   }
   else {
-    throw new Error('valid TYPE variables are "inline" and "traditional"');
+    throw new Error('valid TYPE variables are "inline", "traditional" and "embedded"');
   }
 
 };
@@ -119,10 +125,13 @@ ${header}
 ${blocks}
 `;
 
-var cssLink = '';
+var headerTag = '';
 if(process.env.TYPE === 'traditional'){
-  cssLink = '<link rel="stylesheet" href="style.css" media="all">';
+  headerTag = '<link rel="stylesheet" href="style.css" media="all">';
+} else if(process.env.TYPE === 'embedded'){
+  headerTag = `<style>${getCss()}</style>`;
 }
+
 
 var html = `
 <!DOCTYPE html>
@@ -130,7 +139,7 @@ var html = `
   <head>
     <meta charset="utf-8">
     <title>Traditional CSS</title>
-    ${cssLink}
+    ${headerTag}
   </head>
   <body>
     ${body}
